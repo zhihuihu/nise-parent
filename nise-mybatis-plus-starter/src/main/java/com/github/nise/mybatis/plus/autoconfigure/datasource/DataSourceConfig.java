@@ -38,6 +38,7 @@ public class DataSourceConfig {
         if (dataSource != null) {
             return dataSource;
         }
+
         HikariConfig config = new HikariConfig();
         config.setJdbcUrl(url);
         config.setUsername(username);
