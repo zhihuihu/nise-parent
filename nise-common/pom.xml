@@ -8,7 +8,6 @@
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
-	<version>${nise-common.version}</version>
 
 	<artifactId>nise-common</artifactId>
 

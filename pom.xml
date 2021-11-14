@@ -20,12 +20,22 @@
 		<module>nise-swagger-boot-starter</module>
 		<module>nise-i18n-starter</module>
 		<module>nise-mybatis-plus-starter</module>
+		<module>nise-log</module>
 	</modules>
 
 	<properties>
 		<java.version>1.8</java.version>
 		<!--模块版本-->
 		<nise-common.version>1.0.0-SNAPSHOT</nise-common.version>
+		<nise-swagger-boot-starter.version>1.0.0-SNAPSHOT</nise-swagger-boot-starter.version>
+		<nise-i18n-starter.version>1.0.0-SNAPSHOT</nise-i18n-starter.version>
+		<nise-mybatis-plus-starter.version>1.0.0-SNAPSHOT</nise-mybatis-plus-starter.version>
+		<nise-log.version>1.0.0-SNAPSHOT</nise-log.version>
+		<nise-log-core.version>1.0.0-SNAPSHOT</nise-log-core.version>
+		<nise-log-mongo-starter.version>1.0.0-SNAPSHOT</nise-log-mongo-starter.version>
+		<nise-log-mysql-starter.version>1.0.0-SNAPSHOT</nise-log-mysql-starter.version>
+
+
 		<spring-boot.version>2.5.5</spring-boot.version>
 		<lombok.version>1.18.18</lombok.version>
 		<hutool.version>5.7.14</hutool.version>
@@ -44,6 +54,12 @@
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-web</artifactId>
+				<version>${spring-boot.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-aop</artifactId>
 				<version>${spring-boot.version}</version>
 			</dependency>
 
