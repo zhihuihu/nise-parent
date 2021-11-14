@@ -17,7 +17,7 @@ public class ResponseMessage<T> {
     /** 消息编码 */
     private Integer code;
     /** 消息信息 */
-    private Integer message;
+    private String message;
     /** 消息返回数据 */
     private T data;
 
