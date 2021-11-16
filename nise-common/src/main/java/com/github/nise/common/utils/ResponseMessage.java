@@ -103,6 +103,18 @@ public class ResponseMessage<T> {
 
     /**
      * 请求失败
+     * @param message
+     * @param <T>
+     * @return
+     */
+    public static <T> ResponseMessage<T> fail(String message){
+        ResponseMessage<T> responseMessage = fail();
+        responseMessage.setMessage(message);
+        return responseMessage;
+    }
+
+    /**
+     * 请求失败
      * @param code
      * @param message
      * @param <T>
