@@ -5,7 +5,7 @@
 package com.github.nise.mybatis.plus.utils;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.github.nise.mybatis.plus.dto.PageSortReq;
+import com.github.nise.common.dto.PageSortReq;
 
 /**
  * @author huzhi

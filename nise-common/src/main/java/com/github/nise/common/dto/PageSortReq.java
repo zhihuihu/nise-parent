@@ -2,7 +2,7 @@
  * zhihuihu.github.io.
  * Copyright (c) 2016-2021 All Rights Reserved.
  */
-package com.github.nise.mybatis.plus.dto;
+package com.github.nise.common.dto;
 
 import lombok.Data;
 
