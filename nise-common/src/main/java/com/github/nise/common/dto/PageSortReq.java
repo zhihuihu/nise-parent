@@ -26,7 +26,7 @@ public class PageSortReq {
      * 排序参数
      */
     @Data
-    private static class SortParam{
+    public static class SortParam{
 
         /** 排序参数名称 */
         private String param;

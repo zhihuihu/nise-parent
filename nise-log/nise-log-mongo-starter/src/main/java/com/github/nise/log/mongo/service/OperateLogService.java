@@ -7,21 +7,19 @@ package com.github.nise.log.mongo.service;
 import cn.hutool.core.util.IdUtil;
 import com.alibaba.fastjson.JSON;
 import com.github.nise.common.dto.PageInfo;
-import com.github.nise.common.function.TypeFunction;
 import com.github.nise.common.utils.LambdaUtils;
 import com.github.nise.log.dto.OperateLogInfo;
 import com.github.nise.log.mongo.dto.OperateLogPageReq;
 import com.github.nise.log.mongo.entity.OperateLogMongo;
+import com.github.nise.log.mongo.repository.OperateLogRepositoryImpl;
 import org.springframework.beans.BeanUtils;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.util.ObjectUtils;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * @author huzhi
@@ -29,14 +27,8 @@ import java.util.List;
  */
 public class OperateLogService {
 
-    private MongoTemplate mongoTemplate;
-
-    public OperateLogService() {
-    }
-
-    public OperateLogService(MongoTemplate mongoTemplate) {
-        this.mongoTemplate = mongoTemplate;
-    }
+    @Autowired
+    private OperateLogRepositoryImpl operateLogRepositoryImpl;
 
     /**
      * 新增
@@ -50,7 +42,7 @@ public class OperateLogService {
         operateLogMongo.setResponseDataStr(JSON.toJSONString(operateLogInfo.getResponseData()));
         operateLogMongo.setThrowableStr(JSON.toJSONString(operateLogInfo.getThrowable()));
         operateLogMongo.setCreateTime(LocalDateTime.now());
-        mongoTemplate.save(operateLogMongo);
+        operateLogRepositoryImpl.insert(operateLogMongo);
     }
 
     /**
@@ -60,7 +52,7 @@ public class OperateLogService {
     public void add(OperateLogMongo operateLogMongo){
         operateLogMongo.setId(String.valueOf(IdUtil.getSnowflake().nextId()));
         operateLogMongo.setCreateTime(LocalDateTime.now());
-        mongoTemplate.save(operateLogMongo);
+        operateLogRepositoryImpl.insert(operateLogMongo);
     }
 
     /**
@@ -69,7 +61,6 @@ public class OperateLogService {
      * @return
      */
     public PageInfo<OperateLogMongo> page(OperateLogPageReq operateLogPageReq){
-        PageInfo<OperateLogMongo> pageInfo = new PageInfo<>(operateLogPageReq);
         Query query = new Query();
         Criteria criteria = new Criteria();
         if(!ObjectUtils.isEmpty(operateLogPageReq.getLogId())){
@@ -124,17 +115,7 @@ public class OperateLogService {
                     Criteria.where(LambdaUtils.getColumnName(OperateLogMongo::getThrowableStr)).regex(".*?" + operateLogPageReq.getSearch() + ".*?")));
         }
         query.addCriteria(criteria);
-
-        long count = mongoTemplate.count(query,OperateLogMongo.class);
-        if(count > 0){
-            query.with(Sort.by(Sort.Direction.DESC, LambdaUtils.getColumnName(OperateLogMongo::getCreateTime)));
-
-            long skip = (operateLogPageReq.getCurrent() - 1) * operateLogPageReq.getSize();
-            query.skip(skip);
-            query.limit(operateLogPageReq.getSize().intValue());
-            List<OperateLogMongo> dataList = mongoTemplate.find(query, OperateLogMongo.class);
-            pageInfo.setRecords(dataList);
-        }
+        PageInfo<OperateLogMongo> pageInfo = operateLogRepositoryImpl.page(operateLogPageReq,query,OperateLogMongo.class);
         return pageInfo;
     }
 

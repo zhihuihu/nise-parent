@@ -7,6 +7,8 @@ package com.github.nise.log.mongo.dto;
 import com.github.nise.common.dto.PageSortReq;
 import lombok.Data;
 
+import java.time.LocalDateTime;
+
 /**
  * 操作日志分页查询类
  * @author huzhi
@@ -46,7 +48,7 @@ public class OperateLogPageReq extends PageSortReq {
     private String search;
 
     /** 创建时间搜索开始 */
-    private String createTimeStart;
+    private LocalDateTime createTimeStart;
     /** 创建时间搜索结束 */
-    private String createTimeEnd;
+    private LocalDateTime createTimeEnd;
 }

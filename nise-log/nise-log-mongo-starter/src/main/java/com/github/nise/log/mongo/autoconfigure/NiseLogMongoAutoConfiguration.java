@@ -5,6 +5,7 @@
 package com.github.nise.log.mongo.autoconfigure;
 
 import com.github.nise.log.mongo.properties.NiseLogMongoProperties;
+import com.github.nise.log.mongo.repository.OperateLogRepositoryImpl;
 import com.github.nise.log.mongo.service.OperateLogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -32,7 +33,12 @@ public class NiseLogMongoAutoConfiguration {
     }
 
     @Bean
-    public OperateLogService operateLogService(MongoTemplate mongoTemplate){
-        return new OperateLogService(mongoTemplate);
+    public OperateLogRepositoryImpl operateLogRepository(){
+        return new OperateLogRepositoryImpl();
+    }
+
+    @Bean
+    public OperateLogService operateLogService(){
+        return new OperateLogService();
     }
 }
