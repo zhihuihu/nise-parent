@@ -22,4 +22,16 @@ public class LocalDateTimeUtil extends cn.hutool.core.date.LocalDateTimeUtil {
     public static final String FORMAT_DATE_TO_MONTH = "yyyy-MM";
 
     public static final String FORMAT_DATE_TO_YEAR = "yyyy";
+
+    public static final String FORMAT_DATE_TO_SECOND_NO_SPLIT = "yyyyMMddHHmmss";
+
+    public static final String FORMAT_DATE_TO_MINUTE_NO_SPLIT = "yyyyMMddHHmm";
+
+    public static final String FORMAT_DATE_TO_HOUR_NO_SPLIT = "yyyyMMddHH";
+
+    public static final String FORMAT_DATE_TO_DAY_NO_SPLIT = "yyyyMMdd";
+
+    public static final String FORMAT_DATE_TO_MONTH_NO_SPLIT = "yyyyMM";
+
+
 }
