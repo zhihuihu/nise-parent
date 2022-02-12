@@ -35,7 +35,11 @@
 		<nise-log-core.version>1.0.0-SNAPSHOT</nise-log-core.version>
 		<nise-log-mongo-starter.version>1.0.0-SNAPSHOT</nise-log-mongo-starter.version>
 		<nise-log-mysql-starter.version>1.0.0-SNAPSHOT</nise-log-mysql-starter.version>
-
+		<nise-middle.version>1.0.0-SNAPSHOT</nise-middle.version>
+		<nise-middle-mongo.version>1.0.0-SNAPSHOT</nise-middle-mongo.version>
+		<nise-middle-incr-mongo-starter.version>1.0.0-SNAPSHOT</nise-middle-incr-mongo-starter.version>
+		<nise-middle-scheduler-starter.version>1.0.0-SNAPSHOT</nise-middle-scheduler-starter.version>
+		<nise-middle-excel-starter.version>1.0.0-SNAPSHOT</nise-middle-excel-starter.version>
 
 		<spring-boot.version>2.5.5</spring-boot.version>
 		<lombok.version>1.18.18</lombok.version>
@@ -118,6 +122,72 @@
 				<groupId>com.alibaba</groupId>
 				<artifactId>easyexcel</artifactId>
 				<version>${easyexcel.version}</version>
+			</dependency>
+			<!--项目版本-->
+			<dependency>
+				<groupId>com.github.nise</groupId>
+				<artifactId>nise-common</artifactId>
+				<version>${nise-common.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.nise</groupId>
+				<artifactId>nise-i18n-starter</artifactId>
+				<version>${nise-i18n-starter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.nise</groupId>
+				<artifactId>nise-log</artifactId>
+				<version>${nise-log.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.nise</groupId>
+				<artifactId>nise-middle</artifactId>
+				<version>${nise-middle.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.nise</groupId>
+				<artifactId>nise-mybatis-plus-starter</artifactId>
+				<version>${nise-mybatis-plus-starter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.nise</groupId>
+				<artifactId>nise-swagger-boot-starter</artifactId>
+				<version>${nise-swagger-boot-starter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.nise</groupId>
+				<artifactId>nise-log-core</artifactId>
+				<version>${nise-log-core.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.nise</groupId>
+				<artifactId>nise-log-mongo-starter</artifactId>
+				<version>${nise-log-mongo-starter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.nise</groupId>
+				<artifactId>nise-log-mysql-starter</artifactId>
+				<version>${nise-log-mysql-starter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.nise</groupId>
+				<artifactId>nise-middle-mongo</artifactId>
+				<version>${nise-middle-mongo.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.nise</groupId>
+				<artifactId>nise-middle-incr-mongo-starter</artifactId>
+				<version>${nise-middle-incr-mongo-starter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.nise</groupId>
+				<artifactId>nise-middle-scheduler-starter</artifactId>
+				<version>${nise-middle-scheduler-starter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.nise</groupId>
+				<artifactId>nise-middle-excel-starter</artifactId>
+				<version>${nise-middle-excel-starter.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

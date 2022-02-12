@@ -15,6 +15,7 @@
 		<module>nise-middle-mongo</module>
 		<module>nise-middle-incr-mongo-starter</module>
 		<module>nise-middle-excel-starter</module>
+		<module>nise-middle-scheduler-starter</module>
 	</modules>
 
 </project>

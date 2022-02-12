@@ -15,12 +15,10 @@
 		<dependency>
 			<groupId>com.github.nise</groupId>
 			<artifactId>nise-log-core</artifactId>
-			<version>${nise-log-core.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.github.nise</groupId>
 			<artifactId>nise-middle-mongo</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
