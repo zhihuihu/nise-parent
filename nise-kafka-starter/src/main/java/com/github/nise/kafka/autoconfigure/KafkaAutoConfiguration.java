@@ -14,7 +14,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 /**
  * Spring Boot Starter初始化
  * 1. 将EnableConfigurationProperties 加载到Spring上下文的容器中
- * 2. 当配置文件存在“mq.kafka.bootstrap-server”时新建对象
+ * 2. 当配置文件存在“nise.kafka.enabled=true”时新建对象
  * @author JiangZhe  2/20/22.
  */
 @Configuration
