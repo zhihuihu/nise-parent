@@ -28,17 +28,6 @@ public class ProduceMessage {
      * 一般情况下接收消息的一端会接收topic相同的消息，当接收消息设置了相同的tag的时候仅接收同一主题下相同tag的消息
      */
     private String tag;
-//    /**
-//     * 消息需要延迟发送的时间。
-//     * 默认情况下消息立即发送，当设置了该值后消息会在间隔给定的时间后再发送。
-//     * 如果没有设置该值，且没有设置{@link #getAtTime()}，则消息会立即送达接收端
-//     */
-//    private Integer delayTime;
-//    /**
-//     * 设置一个时间，表示消息进入消息队列后在指定的时间才会被推送给接收端。
-//     * 该值的优先级低于 {@link #getDelayTime()} 属性
-//     */
-//    private Long atTime;
 
     /**
      * 如果此值不为NULL，则发送有序消息，同一个值下的消息会保证有序

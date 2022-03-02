@@ -41,6 +41,7 @@
 		<nise-middle-incr-mongo-starter.version>1.0.0-SNAPSHOT</nise-middle-incr-mongo-starter.version>
 		<nise-middle-scheduler-starter.version>1.0.0-SNAPSHOT</nise-middle-scheduler-starter.version>
 		<nise-middle-excel-starter.version>1.0.0-SNAPSHOT</nise-middle-excel-starter.version>
+		<nise-kafka-starter.version>1.0.0-SNAPSHOT</nise-kafka-starter.version>
 
 		<spring-boot.version>2.5.5</spring-boot.version>
 		<lombok.version>1.18.18</lombok.version>
@@ -219,6 +220,11 @@
 				<groupId>com.github.nise</groupId>
 				<artifactId>nise-middle-excel-starter</artifactId>
 				<version>${nise-middle-excel-starter.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.nise</groupId>
+				<artifactId>nise-kafka-starter</artifactId>
+				<version>${nise-kafka-starter.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

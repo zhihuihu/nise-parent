@@ -71,11 +71,11 @@ public class KafkaDelayConsumerServer implements Runnable {
                             appValue = jsonNodeValue.asText();
                         }
 
-                        // send to application topic
+                        //生产正常消息
                         ProducerRecord<String, byte[]> producerRecord = new ProducerRecord<>(appTopic, appKey, appValue.getBytes(StandardCharsets.UTF_8));
                         try {
                             normalProducer.send(producerRecord).get();
-                            // success. commit message
+                            //提交
                             currentOffsets.put(topicPartition, new OffsetAndMetadata(record.offset() + 1, "delay commit"));
                             delayConsumer.commitSync(currentOffsets);
                         } catch (Exception e) {

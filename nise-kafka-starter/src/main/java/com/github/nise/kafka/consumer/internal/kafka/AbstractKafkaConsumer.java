@@ -85,13 +85,13 @@ public abstract class AbstractKafkaConsumer {
         // getBootstrapServer（必填 ）
         properties.put(CommonClientConfigs.BOOTSTRAP_SERVERS_CONFIG, kafkaProperties.getBootstrapServer());
         // 公网（非必填 ）
-        if (kafkaProperties.getSecurityProtocol() != null) {
+        if (StringUtils.isNotBlank(kafkaProperties.getSecurityProtocol())) {
             properties.put(CommonClientConfigs.SECURITY_PROTOCOL_CONFIG, kafkaProperties.getSecurityProtocol());
         }
-        if (kafkaProperties.getSaslMechanism() != null) {
+        if (StringUtils.isNotBlank(kafkaProperties.getSaslMechanism())) {
             properties.put("sasl.mechanism", kafkaProperties.getSaslMechanism());
         }
-        if (kafkaProperties.getSaslJaasConfig() != null) {
+        if (StringUtils.isNotBlank(kafkaProperties.getSaslJaasConfig())) {
             properties.put("sasl.jaas.config", kafkaProperties.getSaslJaasConfig());
         }
         properties.put(org.apache.kafka.clients.consumer.ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());

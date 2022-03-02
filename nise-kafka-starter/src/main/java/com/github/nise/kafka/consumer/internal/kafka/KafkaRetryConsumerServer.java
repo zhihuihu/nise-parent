@@ -11,6 +11,7 @@ import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.TopicPartition;
 import org.apache.kafka.common.header.internals.RecordHeaders;
 
+import java.time.Duration;
 import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.ConcurrentHashMap;
@@ -39,7 +40,7 @@ public class KafkaRetryConsumerServer implements Runnable {
         while (true) {
             if (retryConsumer != null) {
                 Map<TopicPartition, OffsetAndMetadata> currentOffsets = new ConcurrentHashMap<>();
-                ConsumerRecords<String, byte[]> records = retryConsumer.poll(10000);
+                ConsumerRecords<String, byte[]> records = retryConsumer.poll(Duration.ofMillis(10000));
                 for (ConsumerRecord<String, byte[]> record : records) {
                     currentOffsets.put(new TopicPartition(record.topic(), record.partition()), new OffsetAndMetadata(record.offset() + 1, "retry commit"));
                     retryConsumer.commitSync(currentOffsets);
